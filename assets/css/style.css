@@ -18,14 +18,17 @@ h1 {
   border-radius: 5px;
 }
 
+/* if UV index is between 0-4  */
 .favorable {
   background-color: #28db04;
 }
 
+/* if UV index is between 4-8 */
 .moderate {
   background-color: #f29a02;
 }
 
+/* if UV index is over 8 */
 .severe {
   background-color: #f50a4c;
 }
@@ -49,4 +52,31 @@ h1 {
   border: 1px solid lightgrey;
   padding: 20px;
   margin-bottom: 1rem;
+}
+
+.forecast {
+  margin: 10px 10px;
+}
+
+.dailyForecastDiv {
+    color: white;
+    height: 200px;
+    width: 150px;
+    background-color: dodgerblue;
+    margin: 10px 10px;
+    padding: 10px 0 0 5px;
+    border-radius: 10px;
+  }
+
+.forecastIcon {
+  display: block;
+}
+
+.forecastTemp {
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.forecastHumidity {
+  padding-top: 1rem;
 }
