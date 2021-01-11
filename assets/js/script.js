@@ -77,5 +77,13 @@ function weatherStats(city) {
     $indexNumSpan.text($cityInfo.uvIndex);
     $("#cityUvIndex").text("UV Index: ");
     $("#cityUvIndex").append($indexNumSpan);
+    // Adding background color to UV index based on value
+    if ($cityInfo.uvIndex < 4) {
+      $("#indexNumber").addClass("favorable");
+    } else if ($cityInfo.uvIndex > 4 && $cityInfo.uvIndex < 8) {
+      $("#indexNumber").addClass("moderate");
+    } else {
+      $("#indexNumber").addClass("severe");
+    }
   });
 }

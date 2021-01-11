@@ -13,6 +13,23 @@ h1 {
   max-width: 300px;
 }
 
+#indexNumber {
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.favorable {
+  background-color: #28db04;
+}
+
+.moderate {
+  background-color: #f29a02;
+}
+
+.severe {
+  background-color: #f50a4c;
+}
+
 .recentCitiesList > div {
   border: 1px solid lightgrey;
   padding: 10px;
@@ -22,4 +39,14 @@ h1 {
 
 .recentCitiesList {
   margin-bottom: 20px;
+}
+
+.weatherStats > div {
+  margin-bottom: 1rem;
+}
+
+.weatherStatsStyle {
+  border: 1px solid lightgrey;
+  padding: 20px;
+  margin-bottom: 1rem;
 }
