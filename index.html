@@ -10,11 +10,61 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
     <title>Weather Dashboard</title>
   </head>
   <body>
-      
+    <header>
+      <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <form>
+            <h3>Search for a City:</h3>
+            <div class="input-group mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City Name"
+                id="cityInput"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-primary fas fa-search"
+                  type="submit"
+                  id="citySearchBtn"
+                ></button>
+              </div>
+            </div>
+            <div class="recentCitiesList"></div>
+          </form>
+        </div>
+        <div class="col-md-9">
+          <div class="weatherStats">
+            <h2 id="cityHeader"></h2>
+            <div id="cityTemp"></div>
+            <div id="cityHumidity"></div>
+            <div id="cityWind"></div>
+            <div id="cityUvIndex"></div>
+          </div>
+          <div class="forecast">
+            <h2 id="forecastHeader"></h2>
+            <div class="row fiveDayForecast">
+              <!-- Forecast cards are dynamically with jQuery -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
