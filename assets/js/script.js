@@ -86,4 +86,35 @@ function weatherStats(city) {
       $("#indexNumber").addClass("severe");
     }
   });
+  fiveDayForecast($cityInfo)
+}
+
+function fiveDayForecast(cityInfo) {
+  $("#forecastHeader").text("5 Day Forecast:")
+  let queryURL = `https://api.openweathermap.org/data/2.5/forecast/?q=${cityInfo.name}&appid=${APIkey}&units=imperial`;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    // Filter for weather at noon of each day
+    let $forecast = response.list.filter(city => city.dt_txt.includes("12:00"));
+    $(".fiveDayForecast").empty();
+      // Dynamically creating a weather card for each day in forecast
+      $.each($forecast, function(i, forecast) {
+        const $dailyForecastDiv = $("<div class='dailyForecastDiv'>");
+        // Adding content to each element
+          let $forecastDate = $("<h5 class='forecastDate'>").text(moment(forecast.dt_txt).format('L'));
+          let $forecastIcon = $("<img class='forecastIcon'>").attr("src", `https:///openweathermap.org/img/w/${forecast.weather[0].icon}.png`);
+          let $forecastTemp = $("<div class='forecastTemp'>").text(`Temp: ${Math.round(forecast.main.temp)}°F`)
+          let $forecastHumidity = $("<div class='forecastHumidity'>").text(`Humidity: ${forecast.main.humidity}%`)
+
+        // Building and adding forecast cards to page
+          $dailyForecastDiv.append($forecastDate)
+          $forecastDate.append($forecastIcon)
+          $forecastDate.append($forecastTemp)
+          $forecastTemp.append($forecastHumidity)
+          $(".fiveDayForecast").append($dailyForecastDiv);
+        })
+  })
 }
