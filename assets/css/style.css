@@ -80,3 +80,8 @@ h1 {
 .forecastHumidity {
   padding-top: 1rem;
 }
+
+#ajaxError {
+  color: red;
+  font-style: italic;
+}

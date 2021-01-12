@@ -25,7 +25,8 @@ $("#citySearchBtn").on("click", function (event) {
   $.ajax({
     url: queryURL,
     method: "GET",
-  }).then(function (response) {
+  }).done(function (response) {
+    $("#ajaxError").empty();
     let citiesArr = JSON.parse(localStorage.getItem("recentCities")) || [];
     let cityName = response.name;
     citiesArr.unshift(cityName);
@@ -39,7 +40,12 @@ $("#citySearchBtn").on("click", function (event) {
       $(".recentCitiesList").append($recentCityDiv);
     });
     weatherStats(response);
-  });
+  }).fail(function(xhr) {
+    // Error handling when requests returns 404 error
+      if(xhr.status === 404) {
+        $("#ajaxError").text('Unable to find city, please confirm spelling and try again.')
+      }
+  })
 });
 
 function weatherStats(city) {
