@@ -1,4 +1,4 @@
-# Homework06-WeatherDashboard
+# WeatherDashboard
 The Weather Dashboard app allows users to enter in any city name and retrieve the current and 5-day forecasts for that city. Every city searched will be added to a list below the input. 
 
 ## Technologies
