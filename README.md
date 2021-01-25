@@ -12,4 +12,4 @@ The Weather Dashboard app allows users to enter in any city name and retrieve th
 ![Weather Dashboard](./assets/images/homework06-mockup.png)
 
 ## Demo
-- https://nvandenberge.github.io/Homework06-WeatherDashboard/
+- https://nvandenberge.github.io/WeatherDashboard/
